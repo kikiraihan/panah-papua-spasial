@@ -45,8 +45,37 @@
         </div>
         <!-- main -->
         <div class="h-full">
-            <iframe src="map-html/analisis_sagu.html" frameborder="0" class="w-full h-full"></iframe>
+            <div id="loading-overlay" class="absolute z-52 flex w-full h-full p-4"> 
+                <div class="bg-gray-200 w-full h-full rounded animate-pulse flex justify-center shadow-lg p-4">
+                    <img src="web/assets/world-map-icon.svg" alt="SVG image">
+                    <span class="absolute">Memuat peta...</span>
+                </div>
+            </div>
+            <iframe id="myIframe" src="map-html/analisis_sagu.html" frameborder="0" class="w-full h-full"></iframe>
         </div>
     </div>
+
+    <script>
+        document.getElementById('myIframe').onload = function() {
+            // Sembunyikan overlay loading setelah iframe selesai dimuat
+            document.getElementById('loading-overlay').style.display = 'none';
+        };
+
+        // Tampilkan overlay loading saat iframe dimulai dimuat
+        document.getElementById('loading-overlay').style.display = 'block';
+
+        function reloadIframe() {
+            var iframe = document.getElementById('myIframe');
+            // Simpan URL saat ini
+            var currentSrc = iframe.src;
+            console.log('lama : '+currentSrc);
+
+            // Atur ulang URL iframe untuk memuat ulang kontennya
+            var timestamp = new Date().getTime();
+            iframe.src = currentSrc + '&timestamp=' + timestamp; //trik pakai timestamp agar tidak kena cache
+            console.log('baru : '+iframe.src);
+            document.getElementById('loading-overlay').style.display = 'block';
+        }
+    </script>
 </body>
 <html>
