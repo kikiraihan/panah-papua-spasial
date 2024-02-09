@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <title>Panah Papua</title>
+    <!-- favicon -->
+    <link rel="icon" href="web/assets/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="flex flex-col h-screen">
+        <div class="group py-4 shrink-0 shadow-lg">
+            <div class="container mx-auto w-full flex flex-wrap items-center justify-between">
+                <div class="flex gap-2 items-center">
+                    <img class="h-10" src="web/assets/logo.png">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl font-extrabold leading-tight" style="color: #0e797b;">PANAH PAPUA</span>
+                        <span class="text-xs">PERKUMPULAN PEJUANG TANAH DAN HUTAN PAPUA</span>
+                    </div>
+                </div>
+                <div class="items-center justify-between hidden gap-12 text-black md:flex">
+                    <a class="font-normal text-grey-700 hover:text-teal-600 " href="index.html">Home</a>
+                    <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_admin.html">Peta Administrasi</a>
+                    <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_sagu.html">Peta Sebaran Sagu</a>
+                    <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_topo.html">Peta Topografi</a>
+                    <a class="font-normal text-grey-700 hover:text-teal-600" href="galery.html">Download</a>
+                </div>
+                <button onclick="(() => { this.closest('.group').classList.toggle('open')})()" class="flex md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M3 8H21C21.2652 8 21.5196 7.89464 21.7071 7.70711C21.8946 7.51957 22 7.26522 22 7C22 6.73478 21.8946 6.48043 21.7071 6.29289C21.5196 6.10536 21.2652 6 21 6H3C2.73478 6 2.48043 6.10536 2.29289 6.29289C2.10536 6.48043 2 6.73478 2 7C2 7.26522 2.10536 7.51957 2.29289 7.70711C2.48043 7.89464 2.73478 8 3 8ZM21 16H3C2.73478 16 2.48043 16.1054 2.29289 16.2929C2.10536 16.4804 2 16.7348 2 17C2 17.2652 2.10536 17.5196 2.29289 17.7071C2.48043 17.8946 2.73478 18 3 18H21C21.2652 18 21.5196 17.8946 21.7071 17.7071C21.8946 17.5196 22 17.2652 22 17C22 16.7348 21.8946 16.4804 21.7071 16.2929C21.5196 16.1054 21.2652 16 21 16ZM21 11H3C2.73478 11 2.48043 11.1054 2.29289 11.2929C2.10536 11.4804 2 11.7348 2 12C2 12.2652 2.10536 12.5196 2.29289 12.7071C2.48043 12.8946 2.73478 13 3 13H21C21.2652 13 21.5196 12.8946 21.7071 12.7071C21.8946 12.5196 22 12.2652 22 12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11Z"
+                            fill="black"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute flex md:hidden transition-all duration-300 ease-in-out flex-col items-start shadow-main justify-center w-full gap-3 overflow-hidden bg-white max-h-0 group-[.open]:py-4 px-4 rounded-2xl group-[.open]:max-h-64 top-full">
+                <a class="font-normal text-grey-700 hover:text-teal-600 " href="index.html">Home</a>
+                <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_admin.html">Peta Administrasi</a>
+                <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_sagu.html">Peta Sebaran Sagu</a>
+                <a class="font-normal text-grey-700 hover:text-teal-600" href="peta_topo.html">Peta Topografi</a>
+                <a class="font-normal text-grey-700 hover:text-teal-600" href="galery.html">Download</a>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="h-full">
+            <div class="mt-32">
+                <div class="px-4 sm:px-8 max-w-5xl m-auto">
+                    <h1 class="text-center font-semibold text-sm">File Peta</h1>
+                    <p class="mt-2 text-center text-xs mb-4 text-gray-500">Download File Peta Tematik</p>
+                    <ul class="border border-gray-200 rounded overflow-hidden shadow-md">
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA TOPOGRAFI TELUK BINTUNI.jpg')">A3 PETA TOPOGRAFI TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA ADMINISTRASI TELUK BINTUNI.jpg')">A3 PETA ADMINISTRASI TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA HASIL ANALISIS SAGU TELUK BINTUNI.jpg')">A3 PETA HASIL ANALISIS SAGU TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA KLASIFIKASI DATARAB TELUK BINTUNI.jpg')">A3 PETA KLASIFIKASI DATARAB TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA OVERLAY SAGU TOPOGRAFI TELUK BINTUNI.jpg')">A3 PETA OVERLAY SAGU TOPOGRAFI TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SAGU DISTRIK WAMESA TOPOGRAFI TELUK BINTUNI.jpg')">A3 PETA SAGU DISTRIK WAMESA TOPOGRAFI TELUK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK ARANDAY.jpg')">A3 PETA SEBARAN SAGU DISTRIK ARANDAY</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK AROBA.jpg')">A3 PETA SEBARAN SAGU DISTRIK AROBA</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK BINTUNI.jpg')">A3 PETA SEBARAN SAGU DISTRIK BINTUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK KAITARO.jpg')">A3 PETA SEBARAN SAGU DISTRIK KAITARO</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK KAMUNDAN.jpg')">A3 PETA SEBARAN SAGU DISTRIK KAMUNDAN</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK KURI.jpg')">A3 PETA SEBARAN SAGU DISTRIK KURI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK MANIMERI.jpg')">A3 PETA SEBARAN SAGU DISTRIK MANIMERI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK MEYADO.jpg')">A3 PETA SEBARAN SAGU DISTRIK MEYADO</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK MOSKONA BARAT.jpg')">A3 PETA SEBARAN SAGU DISTRIK MOSKONA BARAT</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK MOSKONA SELATAN.jpg')">A3 PETA SEBARAN SAGU DISTRIK MOSKONA SELATAN</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK SUMURI.jpg')">A3 PETA SEBARAN SAGU DISTRIK SUMURI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK TEMBUNI.jpg')">A3 PETA SEBARAN SAGU DISTRIK TEMBUNI</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK TOMU.jpg')">A3 PETA SEBARAN SAGU DISTRIK TOMU</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK TUHIBA.jpg')">A3 PETA SEBARAN SAGU DISTRIK TUHIBA</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK WAMESA.jpg')">A3 PETA SEBARAN SAGU DISTRIK WAMESA</li>
+                        <li class="cursor-pointer px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out" onclick="downloadFile('map-jpg/A3 PETA SEBARAN SAGU DISTRIK WERIAGAR.jpg')">A3 PETA SEBARAN SAGU DISTRIK WERIAGAR</li>
+                    </ul>
+                    
+                    <script>
+                        function downloadFile(fileName) {
+                            // Membuat elemen <a> untuk mengunduh file
+                            var link = document.createElement('a');
+                            link.href = fileName;  // Memasukkan nama file atau URL file ke href
+                            link.download = fileName;  // Nama file saat diunduh
+                            document.body.appendChild(link);  // Menambahkan elemen <a> ke body
+                            link.click();  // Memicu klik pada elemen <a>
+                            document.body.removeChild(link);  // Menghapus elemen <a> dari body setelah pengunduhan
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap -mx-3 my-5">
+                <div class="w-full max-w-full sm:w-3/4 mx-auto text-center">
+                    <p class="text-sm text-slate-500 py-1">
+                        Tailwind CSS Component from <a
+                            href="https://www.loopple.com/theme/motion-landing-library?ref=tailwindcomponents"
+                            class="text-slate-700 hover:text-slate-900" target="_blank">Motion Landing Library</a> by <a
+                            href="https://www.loopple.com" class="text-slate-700 hover:text-slate-900" target="_blank">Loopple
+                            Builder</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<html>
